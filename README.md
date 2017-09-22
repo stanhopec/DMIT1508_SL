@@ -2,10 +2,12 @@
 
 ##### *Claire's A04 and A05 Supplementary Learning Examples*
 
+Inline-style: 
+![alt text](https://github.com/stanhopec/DMIT1508_SL/pledge.jpg "The Pledge")
+
 ## Database Fundamentals SL Schedules:
 
-**Claire** - claires@nait.ca
-
+| ** Claire ** - claires@nait.ca       |
 | Tuesday    | Wednesday  | Thursday   |
 | :--------: |:---------: | :--------: |
 | 12:00-1:00 | 12:00-1:00 | 12:00-1:00 |
