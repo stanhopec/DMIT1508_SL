@@ -29,5 +29,5 @@ create table Employee
 	ActiveYN char(1) not null
 		constraint df_Employee_ActiveY default 'Y'
 		constraint ck_Employee_ActiveYN check (ActiveYN like '[YN]'),
-	constraint ck_Employee_ReleasedAfterHired check (DateHired >= DateReleased)
+	constraint ck_Employee_ReleasedAfterHired check (DateHired >= DateReleased) -- hey there table level constraint!
 )

@@ -12,6 +12,9 @@ create table Supplier
 		constraint df_Supplier_CityEdmonton default 'Edmonton',
 	PostalCode varchar(7) not null
 		constraint ck_Supplier_ValidPC check (PostalCode like '[A-Z][0-9][A-Z]-[0-9][A-Z][0-9]' or PostalCode like '[0-9][0-9][0-9][0-9][0-9]'),
-	Blah varchar(2) not null
-		constraint blah check (Blah like '[1-9]')
+	Province char(2) not null
+		constraint df_Supplier_ProvinceAB default 'AB'
+		constraint ck_Supplier_ProvinceUpper check (Province like '[A-Z][A-Z]'),
+	Country varchar(15) not null
+		constraint df_Supplier_CountryCAN default 'Canada',
 )
