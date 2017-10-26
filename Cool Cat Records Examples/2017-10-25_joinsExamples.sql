@@ -18,11 +18,24 @@ order by employee.EmployeeID
 
 -- EXAMPLE 3 --
 -- take example 2 and modify it so that you show the total amount of money the employee has sold (hint: use subtotal)
+select firstname + ' ' + lastname 'Employee Name', sum(subtotal) from Employee
+inner join Receipt on Receipt.EmployeeID = Employee.EmployeeID
+group by firstname, lastname
+--selecting by just last name: see the Starks!
+select lastname, sum(subtotal) from Employee
+inner join Receipt on Receipt.EmployeeID = Employee.EmployeeID
+group by lastname
+-- check our work.
+select * from Receipt where EmployeeID = 103
 
 -- EXAMPLE 4 --
--- show all employees whose total amount of money sold is greater than 200$.
+-- show all employees whose total amount of money sold is greater than 50$.
+select firstname + ' ' + lastname 'Employee Name', sum(subtotal) from Employee
+inner join Receipt on Receipt.EmployeeID = Employee.EmployeeID
+group by firstname, lastname
+having sum(subtotal) > 50
 
--- EXAMPLE 5 --
+-- EXAMPLE 5 -- NOTE: THIS IS HARD. Claire will try and give an answer for Tuesday.
 -- Show me the biggest purchase a customer has made and show me their full name and phone number
 
 -- EXAMPLE 6 --
