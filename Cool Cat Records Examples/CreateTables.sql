@@ -17,7 +17,7 @@ create table Customer
 	CustomerID int not null 
 		identity (100, 1)
 		constraint pk_Customer primary key clustered,
-	FirstName varchar(40) null, -- this is nullable.
+	FirstName varchar(40) not null,
 	LastName varchar(50) not null,
 	Phone varchar(14) not null
 		constraint ck_Customer_ValidPhone check (Phone like '[1-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),

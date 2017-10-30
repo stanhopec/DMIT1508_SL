@@ -35,16 +35,27 @@ inner join Receipt on Receipt.EmployeeID = Employee.EmployeeID
 group by firstname, lastname
 having sum(subtotal) > 50
 
--- EXAMPLE 5 -- NOTE: THIS IS HARD. Claire will try and give an answer for Tuesday.
--- Show me the biggest purchase a customer has made and show me their full name and phone number
-
--- EXAMPLE 6 --
+-- EXAMPLE 5 --
 -- select AlbumID, AlbumName, ArtistName, and Genre Description
 -- HINT: there are three tables here!
 
--- EXAMPLE 7 --
+-- EXAMPLE 6 --
 -- show me all the customers who had purchases greater than 50$ and show me what kind of payment they used (PaymentType description)
 
--- EXAMPLE 8 --
+-- EXAMPLE 7 --
 -- show the AlbumName, ArtistName, the current price of the album, and how many times it has been sold
--- HINT: you need three tables here
+
+-- EXAMPLE 8 --
+-- Show me the biggest purchase a customer has made and show me their full name and phone number
+
+-- EXAMPLE 9 --
+-- Show ALL customers and how much they've spent at my store (including tax)
+
+-- EXAMPLE 10 --
+-- Show all customers who haven't bought anything
+
+-- EXAMPLE 11 -- 
+-- Show all employees who haven't sold anything
+
+-- EXAMPLE 12 -- This is hard, even Claire can't figure it out right now. See if you can do it!
+-- Show which album has been sold the most. 

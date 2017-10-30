@@ -10,8 +10,8 @@ insert into Customer(FirstName, LastName, Phone, Address, City, Province, Postal
 	values ('Joe', 'McBaine', '1-555-256-3321', '16-99056 Main Street', 'Calgary', 'AB', 'T5H3U6', 'Canada', 'jmcbaine@hotmail.com')
 insert into Customer(FirstName, LastName, Phone, Address, City, Province, PostalCode, Country)
 	values ('Mary', 'Poppins', '1-889-261-6156', 'Super Road', 'Thunder Bay', 'ON', 'F7Y3I8', 'Canada') -- no email
-insert into Customer(LastName, Phone, Address, City, Province, PostalCode, Country, Email)
-	values ('Teller', '1-444-659-3256', '156 963 Cresc', 'Philadelphia', 'PA', '12345', 'USA', 'teller@magic.com') -- no first name
+insert into Customer(FirstName, LastName, Phone, Address, City, Province, PostalCode, Country, Email)
+	values ('Michael', 'Teller', '1-444-659-3256', '156 963 Cresc', 'Philadelphia', 'PA', '12345', 'USA', 'teller@magic.com')
 insert into Customer(FirstName, LastName, Phone, Address, City, Province, PostalCode, Country, Email)
 	values ('Velaryon', 'Targaryen', '7-895-621-6255', '1598 Valyria Lane', 'Moosejaw', 'SK', 'U8P0K9', 'Canada', 'queen@westeros.we')
 insert into Customer(FirstName, LastName, Phone, Address, City, Province, PostalCode, Country, Email)
@@ -58,7 +58,7 @@ insert into Receipt(Date, CustomerID, EmployeeID, Subtotal, Tax, Total, PaymentT
 insert into Receipt(Date, CustomerID, EmployeeID, Subtotal, Tax, Total, PaymentTypeID)
 	values('6 Apr 2011', 102, 103, 75.00, 10.00, 85.00, 3)
 insert into Receipt(Date, CustomerID, EmployeeID, Subtotal, Tax, Total, PaymentTypeID)
-	values('6 Jan 2015', 101, 104, 18.30, 6.40, 24.70, 5)
+	values('6 Jan 2015', 101, 104, 18.30, 6.40, 24.70, 2)
 
 /* INSERT INTO GENRE ****************************************************************************************************************************************************
 **************************************************************************************************************************************************************** GENRE **/
