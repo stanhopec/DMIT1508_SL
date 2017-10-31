@@ -42,6 +42,7 @@ insert into PaymentType(Description) values('Debit')
 insert into PaymentType(Description) values('Visa')
 insert into PaymentType(Description) values('MasterCard')
 insert into PaymentType(Description) values('Cheque')
+insert into PaymentType(Description) values('Squirrel Tails')
 
 /* INSERT INTO RECEIPT **************************************************************************************************************************************************
 ************************************************************************************************************************************************************** RECEIPT **/
@@ -69,6 +70,7 @@ insert into Genre(Description) values('Hip Hop')
 insert into Genre(Description) values('Metal')
 insert into Genre(Description) values('Stoner Rock')
 insert into Genre(Description) values('Alternative Rock')
+insert into Genre(Description) values('Top 40 Hits')
 
 /* INSERT INTO ARTIST ***************************************************************************************************************************************************
 *************************************************************************************************************************************************************** ARTIST **/
@@ -136,48 +138,63 @@ insert into PurchaseOrder(SupplierID, Subtotal, Tax, Total) --  I can leave the 
 
 /* INSERT INTO PURCHASE ORDER ALBUM *************************************************************************************************************************************
 ************************************************************************************************************************************************* PURCHASE ORDER ALBUM **/
-insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, Amount)
+insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, TotalCost)
 	values(103, 1000, 7, 4.00, 28.00)
-insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, Amount)
+insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, TotalCost)
 	values(100, 1000, 5, 3.25, 16.25)
-insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, Amount)
+insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, TotalCost)
 	values(101, 1000, 30, 4.15, 124.5)
 
-insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, Amount)
+insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, TotalCost)
 	values(101, 1001, 8, 4.15, 33.20)
-insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, Amount)
+insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, TotalCost)
 	values(105, 1001, 15, 3.00, 45.00)
-insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, Amount)
+insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, TotalCost)
 	values(107, 1001, 25, 4.36, 109.00)
-insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, Amount)
+insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, TotalCost)
 	values(103, 1001, 2, 4.00, 8.00)
-insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, Amount)
+insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, TotalCost)
 	values(102, 1001, 40, 5.15, 206.00)
 
-insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, Amount)
+insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, TotalCost)
 	values(104, 1002, 60, 5.00, 300.00)
 
-insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, Amount)
+insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, TotalCost)
 	values(108, 1004, 30, 3.00, 90.00)
-insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, Amount)
+insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, TotalCost)
 	values(110, 1004, 200, 4.77, 954.00)
-insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, Amount)
+insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, TotalCost)
 	values(111, 1004, 120, 4.00, 480.00)
-insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, Amount)
+insert into PurchaseOrderAlbum(AlbumID, PurchaseOrderID, Quantity, Cost, TotalCost)
 	values(106, 1004, 50, 3.65, 182.50)
 
 /* INSERT INTO RECEIPT ALBUM ********************************************************************************************************************************************
 ******************************************************************************************************************************************************** RECEIPT ALBUM **/
-insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, Amount)
+insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, TotalCost)
 	values(100, 100, 1, 12.00, 12.00)
 
-insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, Amount)
+insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, TotalCost)
 	values(100, 101, 1, 12.00, 12.00)
-insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, Amount)
+insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, TotalCost)
 	values(103, 101, 2, 14.00, 28.00)
 
-insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, Amount)
+insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, TotalCost)
 	values(101, 102, 1, 5.00, 5.00)
 
-insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, Amount)
+insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, TotalCost)
 	values(107, 103, 2, 25.00, 50.00)
+insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, TotalCost)
+	values(100, 103, 3, 10.00, 30.00)
+
+insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, TotalCost) -- this is a return!
+	values(100, 104, -1, -10.00, -10.00)
+
+insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, TotalCost)
+	values(101, 105, 1, 10.00, 10.00)
+insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, TotalCost)
+	values(103, 105, 1, 11.00, 11.00)
+
+insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, TotalCost)
+	values(110, 106, 1, 13.00, 13.00)
+insert into ReceiptAlbum(AlbumID, ReceiptID, Quantity, Cost, TotalCost)
+	values(111, 106, 1, 17.00, 17.00)

@@ -41,7 +41,7 @@ create table Employee
 	EmployeeID int not null
 		identity (100, 1)
 		constraint pk_Employee primary key clustered,
-	FirstName varchar(40) null, -- this is nullable.
+	FirstName varchar(40) not null,
 	LastName varchar(50) not null,
 	Phone varchar(14) not null
 		constraint ck_Employee_ValidPhone check (Phone like '[1-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),
@@ -145,7 +145,7 @@ create table Supplier
 	SupplierName varchar(100) not null,
 	Phone varchar(14) not null
 		constraint ck_Supplier_ValidPhone check (Phone like '[1-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),
-	PhoneExtension int null, -- nullable CCC: add to ERD
+	PhoneExtension int null, -- nullable
 	Address varchar(150) not null,
 	City varchar(50) not null,
 	Province char(2) not null
@@ -184,12 +184,12 @@ create table PurchaseOrderAlbum
 		constraint ck_POA_QuantityGE0 check (Quantity >= 0),
 	Cost smallmoney not null
 		constraint ck_POA_CostGE0 check (Cost >= 0),
-	Amount money not null
-		constraint ck_POA_AmountGE0 check (Amount >= 0),	
+	TotalCost money not null
+		constraint ck_POA_AmountGE0 check (TotalCost >= 0),	
 
 	-- Table constraints
 	constraint pk_PurchaseOrderAlbum primary key clustered (AlbumID, PurchaseOrderID), 
-	constraint ck_PurchaseOrderAlbum_AmountGTCost check (Amount >= Cost)
+	constraint ck_PurchaseOrderAlbum_AmountGTCost check (TotalCost >= Cost)
 )
 
 create table ReceiptAlbum
@@ -200,7 +200,7 @@ create table ReceiptAlbum
 		constraint fk_ReceiptAlbumToReceipt references Receipt(ReceiptID),
 	Quantity int not null, -- THIS CAN BE LESS THAN ONE : Returns.
 	Cost money not null,
-	Amount money not null,
+	TotalCost money not null,
 
 	constraint pk_ReceiptAlbum primary key clustered (AlbumID, ReceiptID)
 )
