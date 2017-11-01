@@ -151,7 +151,9 @@ create table Supplier
 	Province char(2) not null
 		constraint ck_Supplier_ProvinceFormat check (Province like '[A-Z][A-Z]'),
 	PostalCode varchar(6) not null
-		constraint ck_Supplier_PostalCodeFormat check (PostalCode like '[A-Z][0-9][A-Z][0-9][A-Z][0-9]' or PostalCode like '[1-9][0-9][0-9][0-9][0-9]')
+		constraint ck_Supplier_PostalCodeFormat check (PostalCode like '[A-Z][0-9][A-Z][0-9][A-Z][0-9]' or PostalCode like '[1-9][0-9][0-9][0-9][0-9]'),
+	Country varchar(15) not null
+		constraint df_Supplier_CountryCAN default 'Canada'
 )
 go
 

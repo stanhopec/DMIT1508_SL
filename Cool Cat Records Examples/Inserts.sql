@@ -114,14 +114,17 @@ insert into Album (AlbumName, ArtistID, ISMN, GenreID, CurrentPrice, QOH)
 
 /* INSERT INTO SUPPLIER *************************************************************************************************************************************************
 ************************************************************************************************************************************************************* SUPPLIER **/
-insert into Supplier(SupplierName, Phone, PhoneExtension, Address, City, Province, PostalCode)
+insert into Supplier(SupplierName, Phone, PhoneExtension, Address, City, Province, PostalCode) -- I left country out because we have a default!
 	values ('ABC Shipping', '1-622-654-5218', 25, '85-965 55 Ave', 'Edmonton', 'AB', 'T5H3I6')
 insert into Supplier(SupplierName, Phone, Address, City, Province, PostalCode)
 	values ('Dwayne''s Shipping Co.', '1-999-625-6156', '89022 44th Street NW', 'Edmonton', 'AB', 'T5H6T5')
-insert into Supplier(SupplierName, Phone, PhoneExtension, Address, City, Province, PostalCode)
+insert into Supplier(SupplierName, Phone, PhoneExtension, Address, City, Province, PostalCode) 
 	values ('RC Records', '4-956-322-3215', 4, '99 Street', 'Calgary', 'AB', 'V5T6R4')
-insert into Supplier(SupplierName, Phone, Address, City, Province, PostalCode)
-	values ('Big America Records', '1-888-859-3251', 'Main Street', 'Chicago', 'IL', '95615')
+insert into Supplier(SupplierName, Phone, Address, City, Province, PostalCode, Country)
+	values ('Big America Records', '1-888-859-3251', 'Main Street', 'Chicago', 'IL', '95615', 'USA')
+insert into Supplier(SupplierName, Phone, Address, City, Province, PostalCode, Country)
+	values ('Jolly Good Records', '3-759-596-2223', 'Main Street', 'London', 'LO', '99562', 'UK')
+
 
 /* INSERT INTO PURCHASE ORDER *******************************************************************************************************************************************
 ******************************************************************************************************************************************************* PURCHASE ORDER **/
