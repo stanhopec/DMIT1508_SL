@@ -38,12 +38,16 @@ having sum(subtotal) > 50
 -- EXAMPLE 5 --
 -- select AlbumID, AlbumName, ArtistName, and Genre Description
 -- HINT: there are three tables here!
+select AlbumID, AlbumName, ArtistName, Description from Album
+inner join Artist on Album.ArtistID = Artist.ArtistID
+inner join Genre on Genre.GenreID = Album.GenreID
 
 -- EXAMPLE 6 --
 -- show me all the customers who had purchases greater than 50$ and show me what kind of payment they used (PaymentType description)
 
 -- EXAMPLE 7 --
--- show the AlbumName, ArtistName, the current price of the album, and how many times it has been sold
+-- show the AlbumName, ArtistName, the current price of the album, and how many times it has been sold 
+-- (show the ones that have never been sold too!)
 
 -- EXAMPLE 8 --
 -- Show me the biggest purchase a customer has made and show me their full name and phone number
