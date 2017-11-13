@@ -1,5 +1,7 @@
 -- DMIT 1508 SL
 -- Claire Stanhope
+-- DISCLAIMER: I'm not a professional, I make mistakes. 
+-- If you notice an error in my answers please let me know! I like to learn from mistakes :)
 
 -- EXAMPLE 1 --------------------------------------------------------------------------------------------------------------------------------------------------------------- EX1
 -- select AlbumID, AlbumName, ArtistName, and Genre ID 
@@ -69,9 +71,14 @@ group by AlbumName, ArtistName, CurrentPrice
 
 -- EXAMPLE 8 --------------------------------------------------------------------------------------------------------------------------------------------------------------- EX8
 -- Show me the biggest purchase a customer has made and show me their full name and phone number
+select firstname + ' ' + lastname 'Name', Phone from Customer
+inner join Receipt on Receipt.CustomerID = Customer.CustomerID
+where Subtotal = (select Max(subtotal) from Receipt)
 
 -- EXAMPLE 9 --------------------------------------------------------------------------------------------------------------------------------------------------------------- EX9
 -- Show ALL customers and how much they've spent at my store (including tax)
+select FirstName, LastName from Customer
+where CustomerID not in (select CustomerID from Receipt)
 
 -- EXAMPLE 10 ------------------------------------------------------------------------------------------------------------------------------------------------------------- EX10
 -- Show all customers who haven't bought anything
@@ -79,5 +86,5 @@ group by AlbumName, ArtistName, CurrentPrice
 -- EXAMPLE 11 ------------------------------------------------------------------------------------------------------------------------------------------------------------- EX11
 -- Show all employees who haven't sold anything
 
--- EXAMPLE 12 -- This is hard, even Claire can't figure it out right now. See if you can do it!
+-- EXAMPLE 12 -- This is hard, Claire can only solve this by using stuff you don't learn in this class. If you want to see Claire's solution just ask her :)
 -- Show which album has been sold the most. 
