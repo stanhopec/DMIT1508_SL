@@ -105,7 +105,7 @@ create table Genre
 	GenreID smallint not null
 		identity(1, 1)
 		constraint pk_Genre primary key clustered,
-	Description varchar(70) not null
+	Description varchar(50) not null
 )
 go
 
