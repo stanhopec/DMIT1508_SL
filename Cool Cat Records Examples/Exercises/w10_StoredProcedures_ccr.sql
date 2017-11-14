@@ -6,10 +6,25 @@
 
 -- EXAMPLE 1 ----------------------------------------------------------------------------------------------------------------------------------------------
 -- create a procedure that shows AlbumName, ArtistName, CurrentPrice, and QOH. Just one big dump of data!
+create procedure AllAlbums as
+	select AlbumName, ArtistName, CurrentPrice, QOH from Album
+	inner join Artist on Artist.ArtistID = Album.ArtistID
+return
+
+exec AllAlbums
 
 -- EXAMPLE 2 ----------------------------------------------------------------------------------------------------------------------------------------------
 -- change the above procedure to only show the albums sold in 2011. Call it "AllAlbums2011"
+go
+create procedure AllAlbums2011 as
+	select AlbumName, ArtistName, CurrentPrice, QOH from Album
+	inner join Artist on Artist.ArtistID = Album.ArtistID
+	inner join ReceiptAlbum on ReceiptAlbum.AlbumID = Album.AlbumID
+	inner join Receipt on Receipt.ReceiptID = ReceiptAlbum.ReceiptID
+		where year(Date) = 2011
+return
 
+exec AllAlbums2011
 
 -- EXAMPLE 3 ----------------------------------------------------------------------------------------------------------------------------------------------
 -- create a procedure called "SearchAlbumByKeyword" that takes a string as a parameter and returns all Album names that contain that string.
