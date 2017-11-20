@@ -77,7 +77,9 @@ where Subtotal = (select Max(subtotal) from Receipt)
 
 -- EXAMPLE 9 --------------------------------------------------------------------------------------------------------------------------------------------------------------- EX9
 -- Show ALL customers and how much they've spent at my store (including tax)
-
+select firstname + ' ' + lastname 'Name', sum(total) 'Total spent at store' from Customer
+left outer join Receipt on Receipt.CustomerID = Customer.CustomerID
+group by firstname, lastname, customer.CustomerID -- group by customerID in case there are customers with the same first and last name
 
 -- EXAMPLE 10 ------------------------------------------------------------------------------------------------------------------------------------------------------------- EX10
 -- Show all customers who haven't bought anything
@@ -87,7 +89,7 @@ where CustomerID not in (select CustomerID from Receipt)
 -- EXAMPLE 11 ------------------------------------------------------------------------------------------------------------------------------------------------------------- EX11
 -- Show all employees who haven't sold anything
 
--- no key for this, it's almost the exact same as example 10.
+-- no key for this, it's almost the exact same as example 10. You can figure it out :)
 
 -- EXAMPLE 12 -- This is hard, Claire can only solve this by using stuff you don't learn in this class. If you want to see Claire's solution just ask her :)
 -- Show which album has been sold the most. 
