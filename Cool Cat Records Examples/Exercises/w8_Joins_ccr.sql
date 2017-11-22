@@ -35,10 +35,17 @@ select * from Receipt where EmployeeID = 103
 
 -- EXAMPLE 4 --------------------------------------------------------------------------------------------------------------------------------------------------------------- EX4
 -- show all employees whose total amount of money sold is greater than 50$.
-select firstname + ' ' + lastname 'Employee Name', sum(subtotal) from Employee
+-- with a join
+select firstname + ' ' + lastname 'Employee Name' from Employee
 inner join Receipt on Receipt.EmployeeID = Employee.EmployeeID
 group by firstname, lastname
 having sum(subtotal) > 50
+
+-- with a subquery
+select firstname + ' ' + lastname 'Employee Name' from Employee
+where EmployeeID in (select EmployeeID from Receipt
+					group by employeeID
+					having sum(subtotal) > 50)
 
 -- EXAMPLE 5 --------------------------------------------------------------------------------------------------------------------------------------------------------------- EX5
 -- select AlbumID, AlbumName, ArtistName, and Genre Description
@@ -46,6 +53,9 @@ having sum(subtotal) > 50
 select AlbumID, AlbumName, ArtistName, Description from Album
 inner join Artist on Album.ArtistID = Artist.ArtistID
 inner join Genre on Genre.GenreID = Album.GenreID
+
+
+
 
 -- EXAMPLE 6 --------------------------------------------------------------------------------------------------------------------------------------------------------------- EX6
 -- show me all the customers who had purchases greater than 50$ and show me what kind of payment they used (PaymentType description)
