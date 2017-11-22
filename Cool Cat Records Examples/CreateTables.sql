@@ -172,6 +172,17 @@ create table PurchaseOrder
 		constraint ck_PO_TaxGT0 check (Tax >= 0),
 	Total money not null,
 		constraint ck_PO_Total check (Total >= 0),
+
+	-- status levels are...
+	-- 'R' = received (meaning that the order has arrived and the stock can be put on shelves)
+	-- 'O' = ordered
+	-- 'P' = pending
+	-- 'I' = incomplete/ in progress
+
+	OrderStatus char(1) not null 
+		constraint ck_PO_OrderStatusValid check (OrderStatus like '[R, O, P, I]')
+		constraint df_PO_OrderStatusI default 'I',
+
 	constraint ch_PO_TotalGESubtotal check (Total >= Subtotal)
 )
 go

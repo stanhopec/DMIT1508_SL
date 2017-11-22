@@ -128,16 +128,16 @@ insert into Supplier(SupplierName, Phone, Address, City, Province, PostalCode, C
 
 /* INSERT INTO PURCHASE ORDER *******************************************************************************************************************************************
 ******************************************************************************************************************************************************* PURCHASE ORDER **/
-insert into PurchaseOrder(Date, SupplierID, Subtotal, Tax, Total)
-	values ('4 Mar 2008', 101, 168.75, 8.44, 177.19)
-insert into PurchaseOrder(Date, SupplierID, Subtotal, Tax, Total)
-	values ('6 Apr 2008', 100, 6512.03, 325.60, 6837.63)
-insert into PurchaseOrder(Date, SupplierID, Subtotal, Tax, Total)
-	values ('15 Feb 2012', 103, 2549.65, 178.48, 2728.13)
-insert into PurchaseOrder(Date, SupplierID, Subtotal, Tax, Total)
-	values ('29 Dec 2015', 103, 35261.07, 3526.11, 38787.18)
-insert into PurchaseOrder(SupplierID, Subtotal, Tax, Total) --  I can leave the date out here because there is a default for today's date.
-	values (100, 56120.00, 4489.60, 60609.60)
+insert into PurchaseOrder(Date, SupplierID, Subtotal, Tax, Total, OrderStatus)
+	values ('4 Mar 2008', 101, 168.75, 8.44, 177.19, 'R')
+insert into PurchaseOrder(Date, SupplierID, Subtotal, Tax, Total, OrderStatus)
+	values ('6 Apr 2008', 100, 6512.03, 325.60, 6837.63, 'R')
+insert into PurchaseOrder(Date, SupplierID, Subtotal, Tax, Total, OrderStatus)
+	values ('15 Feb 2012', 103, 2549.65, 178.48, 2728.13, 'R')
+insert into PurchaseOrder(Date, SupplierID, Subtotal, Tax, Total, OrderStatus)
+	values ('29 Dec 2015', 103, 35261.07, 3526.11, 38787.18, 'P')
+insert into PurchaseOrder(SupplierID, Subtotal, Tax, Total, OrderStatus) --  I can leave the date out here because there is a default for today's date.
+	values (100, 56120.00, 4489.60, 60609.60, 'I')
 
 /* INSERT INTO PURCHASE ORDER ALBUM *************************************************************************************************************************************
 ************************************************************************************************************************************************* PURCHASE ORDER ALBUM **/

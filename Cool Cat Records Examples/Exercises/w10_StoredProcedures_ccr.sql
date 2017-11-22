@@ -53,6 +53,3 @@ exec AllAlbums2011
 
 -- Note: if you created the Example 3 view from the Views exercise, you could use that view here :)
 -- or you can create your own view for this question if desired.
-
--- EXAMPLE 7 ----------------------------------------------------------------------------------------------------------------------------------------------
--- 
