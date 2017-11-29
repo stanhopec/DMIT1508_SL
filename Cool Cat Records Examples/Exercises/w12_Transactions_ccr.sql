@@ -12,15 +12,29 @@
 -- Do NOT create a new artist if artist does not exist.
 
 
-
 -- This is Claire's basic framework for this question...
 -- REMEMBER:
 -- an insert for Genre
 -- check artist exists.
 
-alter procedure AddAlbum --(declare stuff)
---check stuff isn't null
-	-- raise error
+alter procedure AddAlbum (@albName varchar(60) = null, 
+							@artist varchar(50) = null, 
+							@ismn bigint = null, 
+							@genre varchar(50) = null, 
+							@currPrice smallmoney = null,
+							@qoh int = null) 
+as
+if @albName is null 
+OR @artist is null 
+OR @ismn is null 
+OR @genre is null 
+OR @currPrice is null 
+OR @qoh is null
+	begin
+	raiserror('MISSING PARAMETER: Insert 6 parameters: AlbumName, ArtistName, ISMN, GenreDescription, CurrentPrice, and QOH (Quantity On Hand). Procedure Failed.', 16, 1)
+	end
+else
+-- begin transaction
 --genre exists?
 	-- if yes, do...
 		-- get the genre ID
@@ -31,10 +45,20 @@ alter procedure AddAlbum --(declare stuff)
 -- artist exists?
 	-- if yes, do...
 		-- insert the album into album table
+		-- if insert fails:
+			-- rollback
+		-- else
+			-- commit transaction
 
 	-- if no, do...
 		-- raise error
+		-- rollback
+return
 
+
+
+
+-- EXAMPLE 2: steps for archiving an employee -------------------------------------------------------------------------------
 
 -- 1. Select Employee Info from Employee Table
 
@@ -44,7 +68,7 @@ alter procedure AddAlbum --(declare stuff)
 		-- rollback
 	-- else 3.
 -- 3. Delete Employee from Employee Table
-	-- if delete failst
+	-- if delete fails
 		-- rollback
 	-- else
 		-- commit
