@@ -6,7 +6,7 @@
 
 ## Database Fundamentals SL Schedules:
 
-** Claire ** - claires@nait.ca
+**Claire** - claires@nait.ca
 
 | Tuesday    | Wednesday  | Thursday   |
 | :--------: |:---------: | :--------: |
